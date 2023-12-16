@@ -108,7 +108,7 @@ const App = (): JSX.Element => {
         refreshControl={
           <RefreshControl
             colors={['#1060f0']}
-            progressBackgroundColor={'#9aafd6'}
+            // progressBackgroundColor={'#cedbf1'}
             onRefresh={onRefresh}
             refreshing={isRefreshing}
           />
@@ -118,7 +118,9 @@ const App = (): JSX.Element => {
         <View style={styles.activityIndicatorContainer}>
           <ActivityIndicator animating={true} color="#1060f0" size="large" />
         </View>
-        <Button color="#1060f0" title="Press me" touchSoundDisabled={false} />
+        <View style={styles.nativeButtonContainer}>
+          <Button color="#1060f0" title="Press me" touchSoundDisabled={false} />
+        </View>
         <FlatList
           style={styles.itemsContainer}
           contentContainerStyle={styles.items}
@@ -154,6 +156,7 @@ const App = (): JSX.Element => {
         </ImageBackground>
         <TextInput
           style={styles.input}
+          cursorColor="#2d2e4e"
           placeholder="Enter you name"
           placeholderTextColor="#2d2e4e"
         />
@@ -171,7 +174,7 @@ const App = (): JSX.Element => {
           statusBarTranslucent
         >
           <View style={styles.modalContainer}>
-            <View style={styles.modalView}>
+            <View style={styles.modalContent}>
               <View style={styles.modalHandler} />
               <Text style={styles.modalText}>Hello Modal!</Text>
               <Button
@@ -239,6 +242,10 @@ const styles = StyleSheet.create({
     height: 200,
     justifyContent: 'center',
   },
+  nativeButtonContainer: {
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
   itemsContainer: {
     marginVertical: 16,
   },
@@ -280,7 +287,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
-  modalView: {
+  modalContent: {
     alignItems: 'center',
     backgroundColor: '#fff',
     borderTopLeftRadius: 20,
