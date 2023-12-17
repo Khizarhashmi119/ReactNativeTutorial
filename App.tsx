@@ -244,6 +244,7 @@ const styles = StyleSheet.create({
   },
   nativeButtonContainer: {
     borderRadius: 20,
+    borderWidth: 2,
     overflow: 'hidden',
   },
   itemsContainer: {
