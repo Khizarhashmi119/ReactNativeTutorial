@@ -90,7 +90,7 @@ const App = (): JSX.Element => {
   const toggleSwitch = (value: boolean) => setIsEnabled(value);
 
   const handleClickCloseModal = () => {
-    Alert.alert('Modal has been closed.');
+    Alert.alert('This is alert title.', 'This is alert message');
     toggleModal();
   };
 
